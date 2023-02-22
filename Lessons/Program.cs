@@ -4,9 +4,10 @@
     {
         static void Main(string[] args)
         {
-            L1T1_GreetName();
-            L2T1_СalculateTwoNumbers();
-            L2T2_DetermineTheRange();
+            //L1T1_GreetName();
+            //L2T1_СalculateTwoNumbers();
+            //L2T2_DetermineTheRange();
+            L2T3_TranslateFromRusToEng();
         }
 
 
@@ -78,6 +79,52 @@
             }
             else
                 Console.WriteLine("You must enter a number in a range from 0 to 100!");
+        }
+
+        public static void L2T3_TranslateFromRusToEng()
+        {
+            Console.WriteLine("\nPlease, enter your word in Russian:");
+
+            string word = Console.ReadLine();
+            string translate;
+            switch (word)
+            {
+                case "дождь":
+                    translate = "rain";
+                    break;
+                case "ветер":
+                    translate = "wind";
+                    break;
+                case "солнце":
+                    translate = "sun";
+                    break;
+                case "снег":
+                    translate = "snow";
+                    break;
+                case "ураган":
+                    translate = "hurricane";
+                    break;
+                case "мороз":
+                    translate = "freezing";
+                    break;
+                case "зной":
+                    translate = "heat";
+                    break;
+                case "туман":
+                    translate = "fog";
+                    break;
+                case "метель":
+                    translate = "blizzard";
+                    break;
+                case "морось":
+                    translate = "drizzle";
+                    break;
+                default:
+                    Console.WriteLine("Sorry, I don`t know this word :\\");
+                    return;
+            }
+
+            Console.WriteLine(translate);
         }
         #endregion
     }
