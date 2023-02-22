@@ -4,10 +4,11 @@
     {
         static void Main(string[] args)
         {
-            //L1T1_GreetName();
-            //L2T1_СalculateTwoNumbers();
-            //L2T2_DetermineTheRange();
+            L1T1_GreetName();
+            L2T1_СalculateTwoNumbers();
+            L2T2_DetermineTheRange();
             L2T3_TranslateFromRusToEng();
+            L2T4_DetermineParityOfNumber();
         }
 
 
@@ -125,6 +126,27 @@
             }
 
             Console.WriteLine(translate);
+        }
+
+        public static void L2T4_DetermineParityOfNumber()
+        {
+            Console.WriteLine("\nPlease, enter an integer number:");
+
+            bool canBeParsed = long.TryParse(Console.ReadLine(), out long number);
+            if (canBeParsed)
+                Console.WriteLine(number % 2 == 0 ? "Your number is even" : "Your number is uneven");
+            else
+                Console.WriteLine("You entered an invalid value!");
+
+            //if (canBeParsed)
+            //{
+            //    if (number % 2 == 0)
+            //        Console.WriteLine("Your number is even");
+            //    else
+            //        Console.WriteLine("Your number is uneven");
+            //}
+            //else
+            //    Console.WriteLine("You entered an invalid value!");
         }
         #endregion
     }
