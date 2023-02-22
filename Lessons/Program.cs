@@ -1,4 +1,4 @@
-﻿namespace Exercise_1.HelloWorld
+﻿namespace Lessons
 {
     internal class Program
     {
