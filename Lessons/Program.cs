@@ -11,6 +11,7 @@
             //L2T4_DetermineParityOfNumberVar1();
             //L2T4_DetermineParityOfNumberVar2();
             L2T5_DetermineIfTriangleAcuteAngled();
+            L2T6_ChangeValuesOfNumbers();
         }
 
 
@@ -205,21 +206,59 @@
 
                     if (max * max == second * second + third * third)
                     {
-                        Console.Write("No, it's a right triangle.");
+                        Console.WriteLine("\nNo, it's a right triangle.");
                     }
                     else if (max * max > second * second + third * third)
                     {
-                        Console.Write("No, it's an obtuse triangle.");
+                        Console.WriteLine("\nNo, it's an obtuse triangle.");
                     }
                     else
                     {
-                        Console.Write("Yes, it's an acute triangle.");
+                        Console.WriteLine("\nYes, it's an acute triangle.");
                     }
                 }
                 else
                 {
                     Console.WriteLine("\nSuch a triangle cannot exist.");
                 }
+            }
+            else
+            {
+                Console.WriteLine("\nYou entered an invalid value!");
+            }
+        }
+
+        public static void L2T6_ChangeValuesOfNumbers()
+        {
+            Console.WriteLine("\nPlease, enter numbers:");
+            Console.WriteLine("\nA:");
+            bool aIsParsed = double.TryParse(Console.ReadLine(), out double a);
+
+            Console.WriteLine("B:");
+            bool bIsParsed = double.TryParse(Console.ReadLine(), out double b);
+
+            Console.WriteLine("C:");
+            bool cIsParsed = double.TryParse(Console.ReadLine(), out double c);
+
+            Console.WriteLine("D:");
+            bool dIsParsed = double.TryParse(Console.ReadLine(), out double d);
+
+            if (aIsParsed && bIsParsed && cIsParsed && dIsParsed)
+            {
+                if(a <= b && b <= c && c <= d)
+                {
+                    double max = Math.Max(Math.Max(a, b), Math.Max(c, d));
+                    a = b = c = d = max;
+                }
+                else if(!(a > b && b > c && c > d))
+                {
+                    a = Math.Pow(a, 2);
+                    b = Math.Pow(b, 2);
+                    c = Math.Pow(c, 2);
+                    d = Math.Pow(d, 2);
+                }
+
+                Console.WriteLine($"Result: {a}, {b}, {c}, {d}");
             }
             else
             {
