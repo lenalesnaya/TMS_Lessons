@@ -4,12 +4,13 @@
     {
         static void Main(string[] args)
         {
-            L1T1_GreetName();
-            L2T1_СalculateTwoNumbers();
-            L2T2_DetermineTheRange();
-            L2T3_TranslateFromRusToEng();
-            L2T4_DetermineParityOfNumberVar1();
-            L2T4_DetermineParityOfNumberVar2();
+            //L1T1_GreetName();
+            //L2T1_СalculateTwoNumbers();
+            //L2T2_DetermineTheRange();
+            //L2T3_TranslateFromRusToEng();
+            //L2T4_DetermineParityOfNumberVar1();
+            //L2T4_DetermineParityOfNumberVar2();
+            L2T5_DetermineIfTriangleAcuteAngled();
         }
 
 
@@ -71,16 +72,26 @@
             if (canBeParsed && number >= 0 && number <= 100)
             {
                 if (number <= 14)
+                {
                     Console.WriteLine("Your number is in the range from 0 to 14");
+                }
                 else if (number <= 35)
+                {
                     Console.WriteLine("Your number is in the range from 15 to 35");
+                }
                 else if (number <= 50)
+                {
                     Console.WriteLine("Your number is in the range from 36 to 50");
+                }
                 else
+                {
                     Console.WriteLine("Your number is in the range from 51 to 100");
+                }
             }
             else
+            {
                 Console.WriteLine("You must enter a number in a range from 0 to 100!");
+            }
         }
 
         public static void L2T3_TranslateFromRusToEng()
@@ -135,9 +146,13 @@
 
             bool canBeParsed = long.TryParse(Console.ReadLine(), out long number);
             if (canBeParsed)
+            {
                 Console.WriteLine(number % 2 == 0 ? "Your number is even" : "Your number is uneven");
+            }
             else
+            {
                 Console.WriteLine("You entered an invalid value!");
+            }
         }
 
         public static void L2T4_DetermineParityOfNumberVar2()
@@ -151,7 +166,65 @@
                 Console.WriteLine(remainder == 0 ? "Your number is even" : "Your number is uneven");
             }
             else
+            {
                 Console.WriteLine("You entered an invalid value!");
+            }
+        }
+
+        public static void L2T5_DetermineIfTriangleAcuteAngled()
+        {
+            Console.WriteLine("\nFirst side of the triangle:");
+            bool xIsParsed = double.TryParse(Console.ReadLine(), out double x);
+
+            Console.WriteLine("Second side of the triangle:");
+            bool yIsParsed = double.TryParse(Console.ReadLine(), out double y);
+
+            Console.WriteLine("Third side of the triangle:");
+            bool zIsParsed = double.TryParse(Console.ReadLine(), out double z);
+
+            if (xIsParsed && yIsParsed && zIsParsed)
+            {
+                if (x > 0 && y > 0 && z > 0 && (x + y) > z && (y + z) > x && (x + z) > y)
+                {
+                    double max = x;
+                    double second = y;
+                    double third = z;
+
+                    if (y > max)
+                    {
+                        max = y;
+                        second = x;
+                        third = z;
+                    }
+                    if(z > max)
+                    {
+                        max = z;
+                        second = x;
+                        third = y;
+                    }
+
+                    if (max * max == second * second + third * third)
+                    {
+                        Console.Write("No, it's a right triangle.");
+                    }
+                    else if (max * max > second * second + third * third)
+                    {
+                        Console.Write("No, it's an obtuse triangle.");
+                    }
+                    else
+                    {
+                        Console.Write("Yes, it's an acute triangle.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nSuch a triangle cannot exist.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nYou entered an invalid value!");
+            }
         }
         #endregion
     }
