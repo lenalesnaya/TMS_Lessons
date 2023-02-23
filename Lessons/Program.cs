@@ -4,14 +4,15 @@
     {
         static void Main(string[] args)
         {
-            //L1T1_GreetName();
-            //L2T1_СalculateTwoNumbers();
-            //L2T2_DetermineTheRange();
-            //L2T3_TranslateFromRusToEng();
-            //L2T4_DetermineParityOfNumberVar1();
-            //L2T4_DetermineParityOfNumberVar2();
+            L1T1_GreetName();
+            L2T1_СalculateTwoNumbers();
+            L2T2_DetermineTheRange();
+            L2T3_TranslateFromRusToEng();
+            L2T4_DetermineParityOfNumberVar1();
+            L2T4_DetermineParityOfNumberVar2();
             L2T5_DetermineIfTriangleAcuteAngled();
             L2T6_ChangeValuesOfNumbers();
+            L2T7_DetermineChessFieldsСorrespondence();
         }
 
 
@@ -264,6 +265,50 @@
             {
                 Console.WriteLine("\nYou entered an invalid value!");
             }
+        }
+
+        public static void L2T7_DetermineChessFieldsСorrespondence()
+        {
+            Console.WriteLine("\nPlease, enter vertical coordinate of the first field (1-8):");
+            bool kIsParsed = byte.TryParse(Console.ReadLine(), out byte fVert);
+
+            Console.WriteLine("\nPlease, enter horizontal coordinate of the first field (1-8):");
+            bool lIsParsed = byte.TryParse(Console.ReadLine(), out byte fHor);
+
+            Console.WriteLine("\nPlease, enter vertical coordinate of the second field (1-8):");
+            bool mIsParsed = byte.TryParse(Console.ReadLine(), out byte sVert);
+
+            Console.WriteLine("\nPlease, enter horizontal coordinate of the second field (1-8):");
+            bool nIsParsed = byte.TryParse(Console.ReadLine(), out byte sHor);
+
+            if (kIsParsed && lIsParsed && mIsParsed && nIsParsed)
+            {
+                if(fVert > 0 && fVert < 9 && fHor > 0 && fHor < 9 && sVert > 0 && sVert < 9 && sHor > 0 && sHor < 9)
+                {
+                    if((IsEven(fVert) == IsEven(fHor) && IsEven(sVert) == IsEven(sHor)) ||
+                        (IsEven(fVert) != IsEven(fHor) && IsEven(sVert) != IsEven(sHor)))
+                    {
+                        Console.WriteLine("\nThese fields are the same color.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nThese fields are not the same color.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nYour numbers don`t match the given range!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nYou entered an invalid value!");
+            }
+        }
+
+        private static bool IsEven(int value)
+        {
+            return value % 2 == 0;
         }
         #endregion
     }
