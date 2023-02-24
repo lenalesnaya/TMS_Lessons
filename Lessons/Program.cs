@@ -149,7 +149,7 @@
             bool canBeParsed = long.TryParse(Console.ReadLine(), out long number);
             if (canBeParsed)
             {
-                Console.WriteLine(number % 2 == 0 ? "Your number is even" : "Your number is uneven");
+                Console.WriteLine(IsEven(number) ? "Your number is even" : "Your number is uneven");
             }
             else
             {
@@ -269,19 +269,19 @@
 
         public static void L2T7_DetermineChessFieldsСorrespondence()
         {
-            Console.WriteLine("\nPlease, enter vertical coordinate of the first field (1-8):");
-            bool kIsParsed = byte.TryParse(Console.ReadLine(), out byte fVert);
+            Console.WriteLine("\nVertical coordinate of the first field (1-8):");
+            bool fVertIsParsed = sbyte.TryParse(Console.ReadLine(), out sbyte fVert);
 
-            Console.WriteLine("\nPlease, enter horizontal coordinate of the first field (1-8):");
-            bool lIsParsed = byte.TryParse(Console.ReadLine(), out byte fHor);
+            Console.WriteLine("Horizontal coordinate of the first field (1-8):");
+            bool fHorIsParsed = sbyte.TryParse(Console.ReadLine(), out sbyte fHor);
 
-            Console.WriteLine("\nPlease, enter vertical coordinate of the second field (1-8):");
-            bool mIsParsed = byte.TryParse(Console.ReadLine(), out byte sVert);
+            Console.WriteLine("Vertical coordinate of the second field (1-8):");
+            bool sVertIsParsed = sbyte.TryParse(Console.ReadLine(), out sbyte sVert);
 
-            Console.WriteLine("\nPlease, enter horizontal coordinate of the second field (1-8):");
-            bool nIsParsed = byte.TryParse(Console.ReadLine(), out byte sHor);
+            Console.WriteLine("Horizontal coordinate of the second field (1-8):");
+            bool sHorIsParsed = sbyte.TryParse(Console.ReadLine(), out sbyte sHor);
 
-            if (kIsParsed && lIsParsed && mIsParsed && nIsParsed)
+            if (fVertIsParsed && fHorIsParsed && sVertIsParsed && sHorIsParsed)
             {
                 if(fVert > 0 && fVert < 9 && fHor > 0 && fHor < 9 && sVert > 0 && sVert < 9 && sHor > 0 && sHor < 9)
                 {
@@ -293,6 +293,17 @@
                     else
                     {
                         Console.WriteLine("\nThese fields are not the same color.");
+                    }
+
+                    int distVert = Math.Abs(fVert - sVert);
+                    int distHor = Math.Abs(fHor - sHor);
+                    if((distVert == 1 && distHor == 2) || (distVert == 2 && distHor == 1))
+                    {
+                        Console.WriteLine("\nA khight from the first field threaten the second field!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nA khight from the first field doesn`t threaten the second field.");
                     }
                 }
                 else
@@ -306,7 +317,8 @@
             }
         }
 
-        private static bool IsEven(int value)
+
+        private static bool IsEven(long value)
         {
             return value % 2 == 0;
         }
