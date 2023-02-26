@@ -15,6 +15,8 @@
             Lesson2.Task5_DetermineIfTriangleAcuteAngled();
             Lesson2.Task6_ChangeValuesOfNumbers();
             Lesson2.Task7_DetermineChessFieldsСorrespondence();
+
+            Lesson3.Task1_FindNumberInArray();
         }
     }
 }
