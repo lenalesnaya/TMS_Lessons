@@ -10,6 +10,7 @@
             L2T3_TranslateFromRusToEng();
             L2T4_DetermineParityOfNumberVar1();
             L2T4_DetermineParityOfNumberVar2();
+            L2T4_DetermineParityOfNumberVar3();
             L2T5_DetermineIfTriangleAcuteAngled();
             L2T6_ChangeValuesOfNumbers();
             L2T7_DetermineChessFieldsСorrespondence();
@@ -19,8 +20,10 @@
         #region Lesson_1
         public static void L1T1_GreetName()
         {
+            string name;
+
             Console.WriteLine("Who do you want to greet?:");
-            var name = Console.ReadLine();
+            name = Console.ReadLine();
             Console.WriteLine("Hello, " + name);
         }
         #endregion
@@ -32,11 +35,11 @@
             int operand1 = 420;
             int operand2 = 5;
             int result;
+            string sign;
 
             Console.WriteLine("\nPlease, enter arithmetic operation sign (+, -, * or /)");
-
-            string sign = Console.ReadLine();
-            switch(sign)
+            sign = Console.ReadLine();
+            switch (sign)
             {
                 case "+":
                     result = operand1 + operand2;
@@ -69,9 +72,9 @@
         public static void L2T2_DetermineTheRange()
         {
             Console.WriteLine("\nPlease, enter a number in a range from 0 to 100:");
+            bool numberIsParsed = int.TryParse(Console.ReadLine(), out int number);
 
-            bool canBeParsed = int.TryParse(Console.ReadLine(), out int number);
-            if (canBeParsed && number >= 0 && number <= 100)
+            if (numberIsParsed && (number >= 0) && (number <= 100))
             {
                 if (number <= 14)
                 {
@@ -98,10 +101,11 @@
 
         public static void L2T3_TranslateFromRusToEng()
         {
-            Console.WriteLine("\nPlease, enter your word in Russian:");
-
-            string word = Console.ReadLine();
+            string word;
             string translate;
+
+            Console.WriteLine("\nPlease, enter your word in Russian:");
+            word = Console.ReadLine();
             switch (word)
             {
                 case "дождь":
@@ -145,11 +149,13 @@
         public static void L2T4_DetermineParityOfNumberVar1()
         {
             Console.WriteLine("\nPlease, enter an integer number:");
+            bool numberIsParsed = long.TryParse(Console.ReadLine(), out long number);
 
-            bool canBeParsed = long.TryParse(Console.ReadLine(), out long number);
-            if (canBeParsed)
+            if (numberIsParsed)
             {
-                Console.WriteLine(IsEven(number) ? "Your number is even" : "Your number is uneven");
+                Console.WriteLine(IsEven(number) ?
+                    "Your number is even" :
+                    "Your number is uneven");
             }
             else
             {
@@ -160,12 +166,31 @@
         public static void L2T4_DetermineParityOfNumberVar2()
         {
             Console.WriteLine("\nPlease, enter an integer number:");
+            bool numberIsParsed = long.TryParse(Console.ReadLine(), out long number);
 
-            bool canBeParsed = long.TryParse(Console.ReadLine(), out long number);
-            if (canBeParsed)
+            if (numberIsParsed)
             {
                 Math.DivRem(number, 2, out long remainder);
-                Console.WriteLine(remainder == 0 ? "Your number is even" : "Your number is uneven");
+                Console.WriteLine(remainder == 0 ?
+                    "Your number is even" :
+                    "Your number is uneven");
+            }
+            else
+            {
+                Console.WriteLine("You entered an invalid value!");
+            }
+        }
+
+        public static void L2T4_DetermineParityOfNumberVar3()
+        {
+            Console.WriteLine("\nPlease, enter an integer number:");
+            bool numberIsParsed = long.TryParse(Console.ReadLine(), out long number);
+
+            if (numberIsParsed)
+            {
+                Console.WriteLine((number & 1) == 0 ?
+                    "Your number is even" :
+                    "Your number is uneven");
             }
             else
             {
@@ -186,30 +211,30 @@
 
             if (xIsParsed && yIsParsed && zIsParsed)
             {
-                if (x > 0 && y > 0 && z > 0 && (x + y) > z && (y + z) > x && (x + z) > y)
+                if ((x > 0) && (y > 0) && (z > 0) && ((x + y) > z) && ((y + z) > x) && ((x + z) > y))
                 {
-                    double max = x;
-                    double second = y;
-                    double third = z;
+                    double maxSide = x;
+                    double secondSide = y;
+                    double thirdSide = z;
 
-                    if (y > max)
+                    if (y > maxSide)
                     {
-                        max = y;
-                        second = x;
-                        third = z;
+                        maxSide = y;
+                        secondSide = x;
+                        thirdSide = z;
                     }
-                    if(z > max)
+                    if (z > maxSide)
                     {
-                        max = z;
-                        second = x;
-                        third = y;
+                        maxSide = z;
+                        secondSide = x;
+                        thirdSide = y;
                     }
 
-                    if (max * max == second * second + third * third)
+                    if (maxSide * maxSide == secondSide * secondSide + thirdSide * thirdSide)
                     {
                         Console.WriteLine("\nNo, it's a right triangle.");
                     }
-                    else if (max * max > second * second + third * third)
+                    else if (maxSide * maxSide > secondSide * secondSide + thirdSide * thirdSide)
                     {
                         Console.WriteLine("\nNo, it's an obtuse triangle.");
                     }
@@ -246,12 +271,12 @@
 
             if (aIsParsed && bIsParsed && cIsParsed && dIsParsed)
             {
-                if(a <= b && b <= c && c <= d)
+                if ((a <= b) && (b <= c) && (c <= d))
                 {
-                    double max = Math.Max(Math.Max(a, b), Math.Max(c, d));
-                    a = b = c = d = max;
+                    double maxValue = Math.Max(Math.Max(a, b), Math.Max(c, d));
+                    a = b = c = d = maxValue;
                 }
-                else if(!(a > b && b > c && c > d))
+                else if (!((a > b) && (b > c) && (c > d)))
                 {
                     a = Math.Pow(a, 2);
                     b = Math.Pow(b, 2);
@@ -270,23 +295,33 @@
         public static void L2T7_DetermineChessFieldsСorrespondence()
         {
             Console.WriteLine("\nVertical coordinate of the first field (1-8):");
-            bool fVertIsParsed = sbyte.TryParse(Console.ReadLine(), out sbyte fVert);
+            bool firstFieldVerticalIsParsed = sbyte.TryParse(Console.ReadLine(),
+                out sbyte firstFieldVertical);
 
             Console.WriteLine("Horizontal coordinate of the first field (1-8):");
-            bool fHorIsParsed = sbyte.TryParse(Console.ReadLine(), out sbyte fHor);
+            bool firstFieldHorizontalIsParsed = sbyte.TryParse(Console.ReadLine(),
+                out sbyte firstFieldHorizontal);
 
             Console.WriteLine("Vertical coordinate of the second field (1-8):");
-            bool sVertIsParsed = sbyte.TryParse(Console.ReadLine(), out sbyte sVert);
+            bool secondFieldVerticalIsParsed = sbyte.TryParse(Console.ReadLine(),
+                out sbyte secondFieldVertical);
 
             Console.WriteLine("Horizontal coordinate of the second field (1-8):");
-            bool sHorIsParsed = sbyte.TryParse(Console.ReadLine(), out sbyte sHor);
+            bool secondFieldHorizontalIsParsed = sbyte.TryParse(Console.ReadLine(),
+                out sbyte secondFieldHorizontal);
 
-            if (fVertIsParsed && fHorIsParsed && sVertIsParsed && sHorIsParsed)
+            if (firstFieldVerticalIsParsed && firstFieldHorizontalIsParsed &&
+                secondFieldVerticalIsParsed && secondFieldHorizontalIsParsed)
             {
-                if(fVert > 0 && fVert < 9 && fHor > 0 && fHor < 9 && sVert > 0 && sVert < 9 && sHor > 0 && sHor < 9)
+                if ((firstFieldVertical > 0) && (firstFieldVertical < 9) &&
+                    (firstFieldHorizontal > 0) && (firstFieldHorizontal < 9) &&
+                    (secondFieldVertical > 0) && (secondFieldVertical < 9) &&
+                    (secondFieldHorizontal > 0) && (secondFieldHorizontal < 9))
                 {
-                    if((IsEven(fVert) == IsEven(fHor) && IsEven(sVert) == IsEven(sHor)) ||
-                        (IsEven(fVert) != IsEven(fHor) && IsEven(sVert) != IsEven(sHor)))
+                    int firstFieldSum = firstFieldVertical + firstFieldHorizontal;
+                    int secondFieldSum = secondFieldVertical + secondFieldHorizontal;
+
+                    if (IsEven(firstFieldSum) == IsEven(secondFieldSum))
                     {
                         Console.WriteLine("\nThese fields are the same color.");
                     }
@@ -295,9 +330,11 @@
                         Console.WriteLine("\nThese fields are not the same color.");
                     }
 
-                    int distVert = Math.Abs(fVert - sVert);
-                    int distHor = Math.Abs(fHor - sHor);
-                    if((distVert == 1 && distHor == 2) || (distVert == 2 && distHor == 1))
+                    int verticalDistance = Math.Abs(firstFieldVertical - secondFieldVertical);
+                    int horizontalDistance = Math.Abs(firstFieldHorizontal - secondFieldHorizontal);
+
+                    if (((verticalDistance == 1) && (horizontalDistance == 2)) ||
+                        ((verticalDistance == 2) && (horizontalDistance == 1)))
                     {
                         Console.WriteLine("\nA khight from the first field threaten the second field!");
                     }
