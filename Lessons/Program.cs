@@ -17,6 +17,7 @@
             Lesson2.Task7_DetermineChessFieldsСorrespondence();
 
             Lesson3.Task1_FindNumberInArray();
+            Lesson3.Task2_DeleteNumberFromArray();
         }
     }
 }
