@@ -338,5 +338,20 @@
                 Console.WriteLine();
             }
         }
+
+        public static void Task10_CalculateMatrixElementsSum()
+        {
+            Console.WriteLine("\nTask 10.\n");
+
+            var matrix = new int[,] { { 85, 27, 1, 5772 }, { 12, 144, 0, 0 }, { 1, 8, 14, 4 } };
+            var sumOfElements = 0;
+
+            foreach (var element in matrix)
+            {
+                sumOfElements += element;
+            }
+
+            Console.WriteLine($"Sum of elements: {sumOfElements}");
+        }
     }
 }
