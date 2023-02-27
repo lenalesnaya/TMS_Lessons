@@ -309,5 +309,34 @@
             Console.WriteLine($"\nSorted array:");
             Console.WriteLine(String.Join(" ", array));
         }
+
+        public static void Task9_MultiplyMatrices()
+        {
+            Console.WriteLine("\nTask 9.\n");
+
+            var firstMatrix = new int[,] { { 1, 0, 0, 0 }, { 0, 1, 0, 0 }, { 0, 0, 0, 0 } };
+            var secondMatrix = new int[,] { { 1, 2, 3 }, { 1, 1, 1 }, { 0, 0, 0 }, { 2, 1, 0 } };
+
+            if (firstMatrix.GetLength(1) != secondMatrix.GetLength(0))
+            {
+                Console.WriteLine("Matrices cannot be multiplied ;|");
+            }
+
+            var resultOfMultiplication = new int[firstMatrix.GetLength(0), secondMatrix.GetLength(1)];
+
+            Console.WriteLine("Result of multiplication:");
+            for (int i = 0; i < firstMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < secondMatrix.GetLength(1); ++j)
+                {
+                    for (int k = 0; k < firstMatrix.GetLength(1); ++k)
+                    {
+                        resultOfMultiplication[i, j] += firstMatrix[i, k] * secondMatrix[k, j];
+                    }
+                    Console.Write($"{resultOfMultiplication[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
