@@ -18,6 +18,7 @@
 
             Lesson3.Task1_FindNumberInArray();
             Lesson3.Task2_DeleteNumberFromArray();
+            Lesson3.Task3_FindMinMaxAverageValuesInArray();
         }
     }
 }

@@ -43,7 +43,7 @@
         public static void Task2_DeleteNumberFromArray()
         {
             Console.WriteLine("\nTask 2.\n");
-            var array = new int[] { 8, 10, 7778, 7778, 7778, 8, 25885, 28, 6354, 401, 28, 6, 7, 8, 5695, 8, 12, 8};
+            var array = new int[] { 8, 10, 7778, 7778, 7778, 8, 25885, 28, 6354, 401, 28, 6, 7, 8, 5695, 8, 12, 8 };
 
             Console.WriteLine("Initial array:");
             foreach (var element in array)
@@ -83,6 +83,51 @@
                 newArray[i] = array[i];
                 Console.Write($"{newArray[i]} ");
             }
+        }
+
+        public static void Task3_FindMinMaxAverageValuesInArray()
+        {
+            Console.WriteLine("\nTask 3.\n");
+            Console.WriteLine("\nHow many elements will be in your array?");
+
+            var numberOfElementsIsParsed = int.TryParse(Console.ReadLine(), out int numberOfElements);
+            if (!numberOfElementsIsParsed)
+            {
+                Console.WriteLine("\nYou entered an invalid value!");
+                return;
+            }
+
+            var random = new Random();
+            var array = new int[numberOfElements];
+
+            Console.WriteLine();
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(0, 50);
+                Console.WriteLine($"{array[i]} ");
+            }
+
+            var maxValue = array[0];
+            var minValue = array[0];
+            var sumOfElements = array[0];
+            double averageValue;
+
+            for(int i = 1; i < array.Length; i++)
+            {
+                sumOfElements += array[i];
+                if (array[i] > maxValue)
+                {
+                    maxValue = array[i];
+                }
+                else if (array[i] < minValue)
+                {
+                    minValue = array[i];
+                }
+            }
+
+            averageValue = (double)sumOfElements / (double)array.Length;
+
+            Console.WriteLine($"\nMax value: {maxValue}\nMin value: {minValue}\nAverage value: {averageValue}");
         }
     }
 }
