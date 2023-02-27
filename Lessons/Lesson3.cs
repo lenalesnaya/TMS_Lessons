@@ -353,5 +353,32 @@
 
             Console.WriteLine($"Sum of elements: {sumOfElements}");
         }
+
+        public static void Task11_PrintMatrixDiagonals()
+        {
+            Console.WriteLine("\nTask 11.\n");
+
+            var matrix = new int[,] { { 85, 27, 1, 5772 }, { 12, 144, 0, 0 }, { 1, 8, 14, 4 }, { 777, 8, 4, 21 } };
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"{matrix[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("\nMain diagonal of the matrix: ");
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                Console.Write($"{matrix[i,i]} ");
+            }
+
+            Console.WriteLine("\nSecondary diagonal of the matrix: ");
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                Console.Write($"{ matrix[i, matrix.GetLength(0) - i - 1]} ");
+            }
+        }
     }
 }

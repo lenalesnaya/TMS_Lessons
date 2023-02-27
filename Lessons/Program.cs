@@ -26,6 +26,7 @@
             Lesson3.Task8_SortByBubble();
             Lesson3.Task9_MultiplyMatrices();
             Lesson3.Task10_CalculateMatrixElementsSum();
+            Lesson3.Task11_PrintMatrixDiagonals();
         }
     }
 }
