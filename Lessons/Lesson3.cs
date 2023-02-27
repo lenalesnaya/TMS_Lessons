@@ -85,7 +85,7 @@
             }
         }
 
-        public static void Task3_FindMinMaxAverageValuesInArray()
+        public static void Task3_FindMinMaxAverageValuesOfArray()
         {
             Console.WriteLine("\nTask 3.\n");
             Console.WriteLine("\nHow many elements will be in your array?");
@@ -129,7 +129,7 @@
             Console.WriteLine($"\nMax value: {maxValue}\nMin value: {minValue}\nAverage value: {averageValue}");
         }
 
-        public static void Task4_CompareAverageValueOfArrays()
+        public static void Task4_CompareAverageValuesOfArrays()
         {
             Console.WriteLine("\nTask 4.\n");
 
