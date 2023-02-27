@@ -23,6 +23,7 @@
             Lesson3.Task5_CopyEvenNumbersInNewArray();
             Lesson3.Task6_ReplaceElementsWithOddIndexToZero();
             Lesson3.Task7_SortStringArray();
+            Lesson3.Task8_SortByBubble();
         }
     }
 }

@@ -257,7 +257,7 @@
 
         public static void Task7_SortStringArray()
         {
-            Console.WriteLine("\nTask 6.\n");
+            Console.WriteLine("\nTask 7.\n");
 
             var array = new string[] {
                 "Rick", "David", "Tom", "John", "Lola", "Barbara", "Emma", "Bridget", "Nick", "Kurt", "Jimmy", "Janis", "Courtney", "Chester" };
@@ -281,6 +281,33 @@
 
             Console.WriteLine($"\nSorted array:");
             Console.WriteLine(String.Join(", ", array));
+        }
+
+        public static void Task8_SortByBubble()
+        {
+            Console.WriteLine("\nTask 8.\n");
+
+            var array = new int[] { 582, 44588, 555, 450, 58, 0, 0, 85, 1, 2, 1, 33333, 852245, 3887 };
+
+            Console.WriteLine($"Initial array:");
+            Console.WriteLine(String.Join(", ", array));
+
+            var temp = 0;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i] > array[j])
+                    {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine($"\nSorted array:");
+            Console.WriteLine(String.Join(" ", array));
         }
     }
 }
