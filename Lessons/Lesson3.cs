@@ -172,5 +172,64 @@
                     $"\nAverage values ​​of the first ({firstArrayAverageValue}) and second ({secondArrayAverageValue}) arrays are equal.");
             }
         }
+
+        public static void Task5_CopyEvenNumbersInNewArray()
+        {
+            Console.WriteLine("\nTask 5.\n");
+            var numberOfElementsIsParsed = false;
+            var numberOfElements = 0;
+            var isNumberValid = false;
+
+            do
+            {
+                Console.WriteLine("Enter a length of the array (you can choose an integer number > 5 and <= 10):");
+                numberOfElementsIsParsed = int.TryParse(Console.ReadLine(), out numberOfElements);
+
+                isNumberValid = numberOfElementsIsParsed && (numberOfElements > 5) && (numberOfElements <= 10);
+                if (isNumberValid)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("\nYou entered an invalid value!");
+                }
+            }
+            while (!isNumberValid);
+
+            var random = new Random();
+            var array = new int[numberOfElements];
+            var evenValuesCounter = 0;
+
+            Console.WriteLine("\nYour array:");
+            for (int i = 0; i < numberOfElements; i++)
+            {
+                array[i] = random.Next(0, 999);
+                Console.Write($"{array[i]} ");
+                if ((array[i] & 1) == 0)
+                {
+                    evenValuesCounter++;
+                }
+            }
+
+            if (evenValuesCounter == 0)
+            {
+                Console.WriteLine("\nThere is no even values in the array.");
+                return;
+            }
+
+            var evenValuesArray = new int[evenValuesCounter];
+            var evenValuesArrayIndexesCounter = 0;
+
+            Console.WriteLine("\n\nYour even values array:");
+            foreach (int element in array)
+            {
+                if ((element & 1) == 0)
+                {
+                    evenValuesArray[evenValuesArrayIndexesCounter++] = element;
+                    Console.Write($"{evenValuesArray[evenValuesArrayIndexesCounter - 1]} ");
+                }
+            }
+        }
     }
 }
