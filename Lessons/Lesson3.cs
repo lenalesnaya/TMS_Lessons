@@ -290,7 +290,7 @@
             var array = new int[] { 582, 44588, 555, 450, 58, 0, 0, 85, 1, 2, 1, 33333, 852245, 3887 };
 
             Console.WriteLine($"Initial array:");
-            Console.WriteLine(String.Join(", ", array));
+            Console.WriteLine(String.Join(" ", array));
 
             var temp = 0;
             for (int i = 0; i < array.Length - 1; i++)
@@ -377,7 +377,50 @@
             Console.WriteLine("\nSecondary diagonal of the matrix: ");
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                Console.Write($"{ matrix[i, matrix.GetLength(0) - i - 1]} ");
+                Console.Write($"{matrix[i, matrix.GetLength(0) - i - 1]} ");
+            }
+        }
+
+        public static void Task12_SortMatrixRows()
+        {
+            Console.WriteLine("\nTask 12.\n");
+
+            var matrix = new int[,] { { 85, 27, 1, 5772 }, { 12, 144, 0, 0 }, { 1, 8, 14, 4 }, { 777, 8, 4, 21 } };
+
+            Console.WriteLine("Initial array:");
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"{matrix[i, j]}\t");
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 0;i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+                {
+                    for (int k = j + 1; k < matrix.GetLength(1); k++)
+                    {
+                        if (matrix[i, j] > matrix[i, k])
+                        {
+                            var temp = matrix[i, j];
+                            matrix[i, j] = matrix[i, k];
+                            matrix[i, k] = temp;
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine("\nFinal array:");
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write($"{matrix[i, j]}\t");
+                }
+                Console.WriteLine();
             }
         }
     }
