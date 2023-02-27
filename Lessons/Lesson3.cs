@@ -110,7 +110,6 @@
             var maxValue = array[0];
             var minValue = array[0];
             var sumOfElements = array[0];
-            double averageValue;
 
             for(int i = 1; i < array.Length; i++)
             {
@@ -125,9 +124,53 @@
                 }
             }
 
-            averageValue = (double)sumOfElements / (double)array.Length;
+            var averageValue = (double)sumOfElements / (double)array.Length;
 
             Console.WriteLine($"\nMax value: {maxValue}\nMin value: {minValue}\nAverage value: {averageValue}");
+        }
+
+        public static void Task4_CompareAverageValueOfArrays()
+        {
+            Console.WriteLine("\nTask 4.\n");
+
+            var firstArray = new double[] { 55.0, 28.123, 70.2, 50.028, 3.7 };
+            var secondArray = new double[] { 775.23, 88.1, 90.0, 80.8, 5.7 };
+            var sumOfFirstArrayElements = 0.0;
+            var sumOfSecondArrayElements = 0.0;
+
+            Console.WriteLine("First array:");
+            for (int i = 0; i < firstArray.Length; i++)
+            {
+                sumOfFirstArrayElements += firstArray[i];
+                Console.Write($"{firstArray[i]} ");
+            }
+
+            Console.WriteLine("\nSecond array:");
+            for (int i = 0; i < secondArray.Length; i++)
+            {
+                sumOfSecondArrayElements += secondArray[i];
+                Console.Write($"{secondArray[i]} ");
+            }
+
+            var firstArrayAverageValue = Math.Round(sumOfFirstArrayElements / firstArray.Length, 2);
+            var secondArrayAverageValue = Math.Round(sumOfSecondArrayElements / secondArray.Length, 2);
+
+            Console.WriteLine();
+            if (firstArrayAverageValue > secondArrayAverageValue)
+            {
+                Console.WriteLine(
+                    $"\nAn average value of the first array ({firstArrayAverageValue}) is greater than of the second array ({secondArrayAverageValue}).");
+            }
+            else if (firstArrayAverageValue < secondArrayAverageValue)
+            {
+                Console.WriteLine(
+                    $"\nAn average value of the first array ({firstArrayAverageValue}) is less than of the second array ({secondArrayAverageValue}).");
+            }
+            else
+            {
+                Console.WriteLine(
+                    $"\nAverage values ​​of the first ({firstArrayAverageValue}) and second ({secondArrayAverageValue}) arrays are equal.");
+            }
         }
     }
 }
