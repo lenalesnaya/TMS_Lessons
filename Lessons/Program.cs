@@ -21,6 +21,7 @@
             Lesson3.Task3_FindMinMaxAverageValuesOfArray();
             Lesson3.Task4_CompareAverageValuesOfArrays();
             Lesson3.Task5_CopyEvenNumbersInNewArray();
+            Lesson3.Task6_ReplaceElementsWithOddIndexToZero();
         }
     }
 }

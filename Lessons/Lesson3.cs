@@ -231,5 +231,28 @@
                 }
             }
         }
+
+        public static void Task6_ReplaceElementsWithOddIndexToZero()
+        {
+            Console.WriteLine("\nTask 6.\n");
+
+            var array = new int[] { 1, 555, 96, 44984, 4, 77884889, 2221, 6, 333, 964785, 84664, 457894613, 444, 2 };
+
+            Console.WriteLine($"Initial array:");
+            foreach (int element in array)
+            {
+                Console.Write($"{element} ");
+            }
+
+            Console.WriteLine($"\nNew array:");
+            for (int i = 0; i < array.Length; i++)
+            {
+                if ((i & 1) != 0)
+                {
+                    array[i] = 0;
+                }
+                Console.Write($"{array[i]} ");
+            }
+        }
     }
 }
