@@ -254,5 +254,33 @@
                 Console.Write($"{array[i]} ");
             }
         }
+
+        public static void Task7_SortStringArray()
+        {
+            Console.WriteLine("\nTask 6.\n");
+
+            var array = new string[] {
+                "Rick", "David", "Tom", "John", "Lola", "Barbara", "Emma", "Bridget", "Nick", "Kurt", "Jimmy", "Janis", "Courtney", "Chester" };
+
+            Console.WriteLine($"Initial array:");
+            Console.WriteLine(String.Join(", ", array));
+
+            var temp = String.Empty;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[i].CompareTo(array[j]) > 0)
+                    {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine($"\nSorted array:");
+            Console.WriteLine(String.Join(", ", array));
+        }
     }
 }
