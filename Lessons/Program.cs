@@ -15,6 +15,19 @@
             Lesson2.Task5_DetermineIfTriangleAcuteAngled();
             Lesson2.Task6_ChangeValuesOfNumbers();
             Lesson2.Task7_DetermineChessFieldsСorrespondence();
+
+            Lesson3.Task1_FindNumberInArray();
+            Lesson3.Task2_DeleteNumberFromArray();
+            Lesson3.Task3_FindMinMaxAverageValuesOfArray();
+            Lesson3.Task4_CompareAverageValuesOfArrays();
+            Lesson3.Task5_CopyEvenNumbersInNewArray();
+            Lesson3.Task6_ReplaceElementsWithOddIndexToZero();
+            Lesson3.Task7_SortStringArray();
+            Lesson3.Task8_SortByBubble();
+            Lesson3.Task9_MultiplyMatrices();
+            Lesson3.Task10_CalculateMatrixElementsSum();
+            Lesson3.Task11_PrintMatrixDiagonals();
+            Lesson3.Task12_SortMatrixRows();
         }
     }
 }
