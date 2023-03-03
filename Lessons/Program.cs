@@ -28,6 +28,12 @@
             Lesson3.Task10_CalculateMatrixElementsSum();
             Lesson3.Task11_PrintMatrixDiagonals();
             Lesson3.Task12_SortMatrixRows();
+
+            Lesson4.Task1_RemoveNumbersAndReplaceWord();
+            Lesson4.Task2_PrintPhraseUsingConcatenation();
+            Lesson4.Task3_TakeStringParts();
+            Lesson4.Task4_FromBadDayToGoodDay();
+            Lesson4.Task5_HandleDocumentIdOperations();
         }
     }
 }
