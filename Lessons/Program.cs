@@ -4,8 +4,10 @@
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("\nLesson1.\n");
             Lesson1.Task1_GreetName();
 
+            Console.WriteLine("\nLesson2.\n");
             Lesson2.Task1_СalculateTwoNumbers();
             Lesson2.Task2_DetermineTheRange();
             Lesson2.Task3_TranslateFromRusToEng();
@@ -16,6 +18,7 @@
             Lesson2.Task6_ChangeValuesOfNumbers();
             Lesson2.Task7_DetermineChessFieldsСorrespondence();
 
+            Console.WriteLine("\nLesson3.\n");
             Lesson3.Task1_FindNumberInArray();
             Lesson3.Task2_DeleteNumberFromArray();
             Lesson3.Task3_FindMinMaxAverageValuesOfArray();
@@ -29,11 +32,16 @@
             Lesson3.Task11_PrintMatrixDiagonals();
             Lesson3.Task12_SortMatrixRows();
 
+            Console.WriteLine("\nLesson4.\n");
             Lesson4.Task1_RemoveNumbersAndReplaceWord();
             Lesson4.Task2_PrintPhraseUsingConcatenation();
             Lesson4.Task3_TakeStringParts();
             Lesson4.Task4_FromBadDayToGoodDay();
             Lesson4.Task5_HandleDocumentIdOperations();
+
+            Console.WriteLine("\nLesson5.\n");
+            Lesson5.Task1_UsePhoneClass();
+            Lesson5.Task2_UseCreditCardClass();
         }
     }
 }
