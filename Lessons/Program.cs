@@ -42,6 +42,8 @@
             Console.WriteLine("\nLesson5.\n");
             Lesson5.Task1_UsePhoneClass();
             Lesson5.Task2_UseCreditCardClass();
+            Lesson5.Task3_UseATM();
+            Lesson5.Task4_UseClinic();
         }
     }
 }

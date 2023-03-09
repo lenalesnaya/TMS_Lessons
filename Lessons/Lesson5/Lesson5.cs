@@ -43,5 +43,46 @@
             creditCard3.ReplenishBalance(5000m);
             creditCard4.WithdrawSum(500.40m);
         }
+
+        public static void Task3_UseATM()
+        {
+            Console.WriteLine("\nTask 3.\n");
+            var amountOf100ToIssue = 0;
+            var amountOf50ToIssue = 0;
+            var amountOf20ToIssue = 0;
+            var atm = new ATM(1, 2, 1);
+
+            var result = atm.WithdrawMoney(210, out amountOf100ToIssue, out amountOf50ToIssue, out amountOf20ToIssue);
+            if (result)
+            {
+                Console.WriteLine($"\n100: {amountOf100ToIssue}, 50: {amountOf50ToIssue}, 20: {amountOf20ToIssue}");
+            }
+
+            atm.AddMoney(2, 0, 0);
+
+            result = atm.WithdrawMoney(210, out amountOf100ToIssue, out amountOf50ToIssue, out amountOf20ToIssue);
+            if (result)
+            {
+                Console.WriteLine($"\n100: {amountOf100ToIssue}, 50: {amountOf50ToIssue}, 20: {amountOf20ToIssue}");
+            }
+        }
+
+        public static void Task4_UseClinic()
+        {
+            Console.WriteLine("\nTask 4.\n");
+
+            var patientVolodya = new Patient("Volodya");
+
+            patientVolodya.Treat();
+            patientVolodya.CreateTreatmentPlan(27, 1, 2, 27);
+            patientVolodya.Treat();
+            patientVolodya.CancelTreatmentPlan();
+            patientVolodya.Treat();
+
+            var gastritisTreatmentPlan = new TreatmentPlan(27, 1, 27);
+
+            patientVolodya.SetTreatmentPlan(gastritisTreatmentPlan);
+            patientVolodya.Treat();
+        }
     }
 }
