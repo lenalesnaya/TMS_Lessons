@@ -1,6 +1,6 @@
 ﻿namespace Lessons
 {
-    public static class Lesson2
+    internal static class Lesson2
     {
         public static void Task1_СalculateTwoNumbers()
         {

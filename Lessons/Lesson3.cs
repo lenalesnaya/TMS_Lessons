@@ -1,6 +1,6 @@
 ﻿namespace Lessons
 {
-    public class Lesson3
+    internal class Lesson3
     {
         public static void Task1_FindNumberInArray()
         {

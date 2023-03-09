@@ -2,7 +2,7 @@
 
 namespace Lessons
 {
-    public class Lesson4
+    internal class Lesson4
     {
         public static void Task1_RemoveNumbersAndReplaceWord()
         {

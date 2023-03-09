@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Lessons
 {
-    public static class DocumentIdOperations
+    internal static class DocumentIdOperations
     {
         public static void ShowNumericBlocks(string documentId)
         {
