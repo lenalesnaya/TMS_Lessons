@@ -1,4 +1,6 @@
-﻿namespace Lessons
+﻿using Lessons.Lesson5Tasks.Clinic;
+
+namespace Lessons.Lesson5Tasks
 {
     internal static class Lesson5
     {

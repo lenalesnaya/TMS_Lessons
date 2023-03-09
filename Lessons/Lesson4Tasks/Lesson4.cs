@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Lessons
+namespace Lessons.Lesson4Tasks
 {
     internal class Lesson4
     {

@@ -1,4 +1,4 @@
-﻿namespace Lessons
+﻿namespace Lessons.Lesson5Tasks.Clinic
 {
     internal class Therapist
     {

@@ -1,4 +1,8 @@
-﻿namespace Lessons
+﻿using Lessons.Lesson4Tasks;
+using Lessons.Lesson5Tasks;
+using Lessons.Lesson6Tasks;
+
+namespace Lessons
 {
     internal class Program
     {
@@ -44,6 +48,10 @@
             Lesson5.Task2_UseCreditCardClass();
             Lesson5.Task3_UseATM();
             Lesson5.Task4_UseClinic();
+
+            Console.WriteLine("\nLesson6.\n");
+            Lesson6.Task1_UseGeometricFigures();
+            Lesson6.Task2_UseClinic();
         }
     }
 }
