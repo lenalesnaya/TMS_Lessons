@@ -1,8 +1,8 @@
 ﻿namespace Lessons.Lesson6Tasks.Clinic
 {
-    /// <summary>
-    /// Represents the entity "treatment plan", allows doctors to be assigned to patients.
-    /// </summary>
+    ///<summary>
+    ///Represents the entity "treatment plan", allows doctors to be assigned to patients.
+    ///</summary>
     internal class TreatmentPlan
     {
         private readonly DoctorsCodes[] doctorsCodes;
@@ -21,9 +21,9 @@
             AppointDoctors();
         }
 
-        /// < summary>
-        /// Assigns doctors to patients depending on the established treatment plan.
-        /// < /summary>
+        ///<summary>
+        ///Assigns doctors to patients depending on the established treatment plan.
+        ///</summary>
         private void AppointDoctors()
         {
             if (doctorsCodes == null || doctorsCodes.Length < 0)

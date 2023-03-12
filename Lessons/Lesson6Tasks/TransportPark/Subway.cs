@@ -1,8 +1,8 @@
 ﻿namespace Lessons.Lesson6Tasks.TransportPark
 {
-    /// <summary>
-    /// Represents the entity "subway" (base: RailTransport -> Transport).
-    /// </summary>
+    ///<summary>
+    ///Represents the entity "subway" (base: RailTransport -> Transport).
+    ///</summary>
     internal class Subway : RailTransport
     {
         public override TypeOfEngine? EngineType { get; } = TypeOfEngine.Electrical;

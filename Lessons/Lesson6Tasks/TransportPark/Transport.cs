@@ -1,8 +1,8 @@
 ﻿namespace Lessons.Lesson6Tasks.TransportPark
 {
-    /// <summary>
-    /// Base abstract class for all kinds of transport in public transport park.
-    /// </summary>
+    ///<summary>
+    ///Base abstract class for all kinds of transport in public transport park.
+    ///</summary>
     internal abstract class Transport
     {
         public string Number { get; set; }
@@ -24,9 +24,9 @@
             NumberOfSeats = numberOfSeats;
         }
 
-        /// < summary>
-        /// (virtual) Prints information about specific transport to the console.
-        /// < /summary>
+        ///<summary>
+        ///(virtual) Prints information about specific transport to the console.
+        ///</summary>
         public virtual void ShowInfo()
         {
             Console.WriteLine($"\nThe {this} #{Number}");
@@ -37,12 +37,12 @@
             Console.WriteLine($"Number of seats: {NumberOfSeats}");
         }
 
-        /// < summary>
-        /// (virtual) Returns a set of values, describing the transport type.
-        /// < /summary>
-        /// <param name="transportName">Using the "out" modifier returns the name of the transport.</param>
-        /// <param name="movementType">Using the "out" modifier returns the movement type of the transport.</param>
-        /// <param name="engineType">Using the "out" modifier returns the engine type of the transport.</param>
+        ///<summary>
+        ///(virtual) Returns a set of values, describing the transport type.
+        ///</summary>
+        ///<param name="transportName">Using the "out" modifier returns the name of the transport.</param>
+        ///<param name="movementType">Using the "out" modifier returns the movement type of the transport.</param>
+        ///<param name="engineType">Using the "out" modifier returns the engine type of the transport.</param>
         public virtual void GetTransportType(
             out string transportName, out TypeOfMovement? movementType, out TypeOfEngine? engineType)
         {
@@ -51,24 +51,24 @@
             engineType = EngineType;
         }
 
-        /// < summary>
-        /// Overrides Object.ToString().Gets the name of the type in string format.
-        /// < /summary>
-        /// < returns> 
-        /// Returns the name of the type.
-        /// < /returns>
+        ///<summary>
+        ///Overrides Object.ToString().Gets the name of the type in string format.
+        ///</summary>
+        ///<returns>
+        ///Returns the name of the type.
+        ///</returns>
         public override string ToString()
         {
             return GetType().Name.ToLower();
         }
 
-        /// < summary>
-        /// Overrides Object.Equals(object? obj). Compares two objects of base type "Transport" by type and property "Number".
-        /// < /summary>
+        ///<summary>
+        ///Overrides Object.Equals(object? obj). Compares two objects of base type "Transport" by type and property "Number".
+        ///</summary>
         ///<param name="obj">Object to compare.</param>
-        /// < returns>
-        /// Returns the boolean result of the comparison.
-        /// < /returns>
+        ///<returns>
+        ///Returns the boolean result of the comparison.
+        ///</returns>
         public override sealed bool Equals(object? obj)
         {
             if (obj?.GetType() == GetType())
@@ -76,12 +76,12 @@
             return false;
         }
 
-        /// < summary>
-        /// (virtual) Gets the string of the type of trip property.
-        /// < /summary>
-        /// < returns>
-        /// Returns type of trip string.
-        /// < /returns>
+        ///<summary>
+        ///(virtual) Gets the string of the type of trip property.
+        ///</summary>
+        ///<returns>
+        ///Returns type of trip string.
+        ///</returns>
         protected virtual string GetTypeOfTripString()
         {
             return TypeOfTrip switch
