@@ -52,6 +52,7 @@ namespace Lessons
             Console.WriteLine("\nLesson6.\n");
             Lesson6.Task1_UseGeometricFigures();
             Lesson6.Task2_UseClinic();
+            Lesson6.Task3_UseCarPark();
         }
     }
 }
