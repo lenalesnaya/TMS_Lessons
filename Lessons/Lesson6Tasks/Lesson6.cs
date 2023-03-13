@@ -1,6 +1,7 @@
 ﻿using Lessons.Lesson6Tasks.TransportPark;
 using Lessons.Lesson6Tasks.Clinic;
 using Lessons.Lesson6Tasks.GeometricFigures;
+using Lessons.Lesson6Tasks.AutoService;
 
 namespace Lessons.Lesson6Tasks
 {
@@ -49,77 +50,30 @@ namespace Lessons.Lesson6Tasks
             patientVolodya.Treat();
         }
 
-        public static void Task3_UseCarPark()
+        public static void Task3_UseTransportPark()
         {
             Console.WriteLine("\nTask 3.\n");
 
-            var busMinskKyiv = new Bus(
-                "2525110", TypeOfTrip.International, "Minsk", new DateTime(2023, 03, 29, 10, 00, 00), "Kyiv", 45);
-            TransportService.PrintTransportType(busMinskKyiv);
-
-            var minibusBerezinoMinsk = new Minibus(
-                "1010", TypeOfTrip.Intercity, "Berezino", new DateTime(2023, 03, 11, 07, 10, 00), "Minsk", 22);
-            TransportService.PrintTransportType(minibusBerezinoMinsk);
-
-            var trolleybusGreenMeadowSilverfish = new Trolleybus(
-                "53", TypeOfTrip.Urban, "Green Meadow", new DateTime(2023, 03, 11, 00, 55, 00), "Silverfish", 50);
-            TransportService.PrintTransportType(trolleybusGreenMeadowSilverfish);
-
-            var tramcarChizhovkaRailwayStation = new Tramcar(
-                "53", TypeOfTrip.Urban, "Chizhovka", new DateTime(2023, 03, 11, 11, 07, 00), "Railway station", 50);
-            TransportService.PrintTransportType(tramcarChizhovkaRailwayStation);
-
-            var tramcarRailwayStationChizhovka = new Tramcar(
-                "53", TypeOfTrip.Urban, "RailwayStation", new DateTime(2023, 03, 11, 14, 03, 00), "Chizhovka", 50);
-
-            var electricBusSmolevichiSmilovichi = new Electrobus(
-                "101K2", TypeOfTrip.Intercity, "Smolevichi", new DateTime(2023, 03, 11, 10, 20, 00), "Smilovichi", 42);
-            TransportService.PrintTransportType(electricBusSmolevichiSmilovichi);
-
-            var subwayMogilyovskayaRockHill = new Subway(
-                "222", TypeOfTrip.Urban, "Mogilyovskaya", new DateTime(2023, 03, 12, 18, 57, 00), "Rock hill", 250);
-            TransportService.PrintTransportType(subwayMogilyovskayaRockHill);
-
-            var electricTrainMinskRailwayStationGudogai = new ElectricTrain(
-                "80T85", TypeOfTrip.Suburban, "Minsk railway station", new DateTime(2023, 03, 24, 12, 30, 00), "Gudogai", 350);
-            TransportService.PrintTransportType(electricTrainMinskRailwayStationGudogai);
-
-            var dieselTrainMinskTbilisi = new DieselTrain(
-                "1233HH", TypeOfTrip.International, "Minsk", new DateTime(2023, 04, 02, 08, 55, 00), "Tbilisi", 550);
-            TransportService.PrintTransportType(dieselTrainMinskTbilisi);
-
-            var busMinskKyiv2 = new Bus(
-                "2005110", TypeOfTrip.International, "Minsk", new DateTime(2023, 03, 29, 10, 00, 00), "Kyiv", 65);
-
-            var transportArray = new Transport[]
+            foreach (var transport in TransportDb.Transport)
             {
-                busMinskKyiv,
-                minibusBerezinoMinsk,
-                trolleybusGreenMeadowSilverfish,
-                tramcarChizhovkaRailwayStation,
-                tramcarRailwayStationChizhovka,
-                electricBusSmolevichiSmilovichi,
-                subwayMogilyovskayaRockHill,
-                electricTrainMinskRailwayStationGudogai,
-                dieselTrainMinskTbilisi,
-                busMinskKyiv2
-            };
+                TransportService.PrintTransportType(transport);
+            }
 
             Transport tempTransport;
-            for (int i = 0; i < transportArray.Length - 1; i++)
+            for (int i = 0; i < TransportDb.Transport.Length - 1; i++)
             {
-                for (int j = i + 1; j < transportArray.Length; j++)
+                for (int j = i + 1; j < TransportDb.Transport.Length; j++)
                 {
-                    if (transportArray[i].NumberOfSeats > transportArray[j].NumberOfSeats)
+                    if (TransportDb.Transport[i].NumberOfSeats > TransportDb.Transport[j].NumberOfSeats)
                     {
-                        tempTransport = transportArray[i];
-                        transportArray[i] = transportArray[j];
-                        transportArray[j] = tempTransport;
+                        tempTransport = TransportDb.Transport[i];
+                        TransportDb.Transport[i] = TransportDb.Transport[j];
+                        TransportDb.Transport[j] = tempTransport;
                     }
                 }
             }
 
-            foreach (var transport in transportArray)
+            foreach (var transport in TransportDb.Transport)
             {
                 transport.ShowInfo();
             }
@@ -133,7 +87,7 @@ namespace Lessons.Lesson6Tasks
             var indicator = 0;
             if (dateTimeIsParsed && !string.IsNullOrEmpty(destination))
             {
-                foreach (var transport in transportArray)
+                foreach (var transport in TransportDb.Transport)
                 {
                     if ((transport.DepartureTime == departureDateTime) && (transport.Destination == destination))
                     {
@@ -152,15 +106,15 @@ namespace Lessons.Lesson6Tasks
                 Console.WriteLine("\nYou entered invalid data!");
             }
 
-            for (int i = 0; i < transportArray.Length - 1; i++)
+            for (int i = 0; i < TransportDb.Transport.Length - 1; i++)
             {
-                for (int j = i + 1; j < transportArray.Length; j++)
+                for (int j = i + 1; j < TransportDb.Transport.Length; j++)
                 {
-                    if (transportArray[i].DepartureTime > transportArray[j].DepartureTime)
+                    if (TransportDb.Transport[i].DepartureTime > TransportDb.Transport[j].DepartureTime)
                     {
-                        tempTransport = transportArray[i];
-                        transportArray[i] = transportArray[j];
-                        transportArray[j] = tempTransport;
+                        tempTransport = TransportDb.Transport[i];
+                        TransportDb.Transport[i] = TransportDb.Transport[j];
+                        TransportDb.Transport[j] = tempTransport;
                     }
                 }
             }
@@ -171,7 +125,7 @@ namespace Lessons.Lesson6Tasks
             indicator = 0;
             if (dateTimeIsParsed)
             {
-                foreach (var transport in transportArray)
+                foreach (var transport in TransportDb.Transport)
                 {
                     if (transport.DepartureTime >= departureDateTime)
                     {
@@ -190,18 +144,83 @@ namespace Lessons.Lesson6Tasks
                 Console.WriteLine("\nYou entered invalid data!");
             }
 
-            var isTransportsEqual = tramcarChizhovkaRailwayStation.Equals(tramcarRailwayStationChizhovka) ?
+            var isTransportsEqual = TransportDb.Transport[3].Equals(TransportDb.Transport[4]) ?
                 "\nTramcars are equal" :
                 "\nTramcars aren`t equal";
             Console.WriteLine(isTransportsEqual);
-            isTransportsEqual = tramcarChizhovkaRailwayStation.Equals(trolleybusGreenMeadowSilverfish) ?
+            isTransportsEqual = TransportDb.Transport[3].Equals(TransportDb.Transport[2]) ?
                 "\nTramcar and trolleybus are equal" :
                 "\nTramcar and trolleybus aren`t equal";
             Console.WriteLine(isTransportsEqual);
-            isTransportsEqual = busMinskKyiv.Equals(busMinskKyiv2) ?
+            isTransportsEqual = TransportDb.Transport[0].Equals(TransportDb.Transport[9]) ?
                 "\nBuses are equal" :
                 "\nBuses aren`t equal";
             Console.WriteLine(isTransportsEqual);
+        }
+
+        public static void Task4_UseAutoService()
+        {
+            foreach (var auto in AutoDb.Autos)
+            {
+                auto.ShowInfo();
+            }
+
+            Console.WriteLine("\nEnter the minimum required load capacity (t): ");
+            var loadCapacityIsParsed = double.TryParse(Console.ReadLine(), out double loadCapacity);
+
+            int indicator = 0;
+            if (loadCapacityIsParsed)
+            {
+                foreach (var auto in AutoDb.Autos)
+                {
+                    if (auto.LoadCapacity >= 20)
+                    {
+                        auto.ShowInfo();
+                    }
+                    indicator++;
+                }
+                if (indicator < 1)
+                {
+                    Console.WriteLine("\nNo matches found");
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nYou entered invalid data!");
+            }
+
+            var car = new PassengerCar("Volvo V60 Cross Country", "2727", 250, 750);
+            car.ShowInfo();
+            car.SetLoadCapacity(600);
+            car.ShowInfo();
+
+            var motorcycle = new Motorcycle("Honda RS250RW", "N250", 150);
+            motorcycle.ShowInfo();
+            motorcycle.SetLoadCapacity(0.3);
+            motorcycle.ShowInfo();
+            motorcycle.SetSidecar(0.3);
+            motorcycle.ShowInfo();
+            motorcycle.CancelSidecar();
+            motorcycle.ShowInfo();
+            motorcycle = new Motorcycle("Ducati 1199 Panigale S", "00M1", 170, 0.5);
+            motorcycle.ShowInfo();
+
+            var truck = new Truck("Scania S-Series", "88KF3-51", 200, 30);
+            truck.ShowInfo();
+            truck.Trailer = true;
+            truck.ShowInfo();
+            truck.SetLoadCapacity(40);
+            truck.ShowInfo();
+            truck.Trailer = false;
+            truck.ShowInfo();
+            truck = new Truck("HINO 500", "300F3-HH", 210, 60, true);
+            truck.ShowInfo();
+            truck.Trailer = true;
+            truck.ShowInfo();
+            truck.SetLoadCapacity(40);
+            truck.ShowInfo();
+            truck.Trailer = false;
+            truck.ShowInfo();
         }
     }
 }
