@@ -23,6 +23,7 @@
                 }
             }
         }
+
         public bool Trailer
         {
             get { return trailer; }

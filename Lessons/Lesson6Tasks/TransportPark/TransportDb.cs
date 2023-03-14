@@ -1,6 +1,6 @@
 ﻿namespace Lessons.Lesson6Tasks.TransportPark
 {
-    internal class TransportDb
+    internal struct TransportDb
     {
         public static Transport[] Transport { get; set; } =
         {
