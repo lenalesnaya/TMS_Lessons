@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Lessons
+namespace Lessons.Lesson4Tasks
 {
     internal static class DocumentIdOperations
     {

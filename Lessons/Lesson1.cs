@@ -4,7 +4,7 @@
     {
         public static void Task1_GreetName()
         {
-            string name;
+            string? name;
 
             Console.WriteLine("Who do you want to greet?:");
             name = Console.ReadLine();
