@@ -1,6 +1,7 @@
 ﻿using Lessons.Lesson4Tasks;
 using Lessons.Lesson5Tasks;
 using Lessons.Lesson6Tasks;
+using Lessons.Lesson8Tasks;
 
 namespace Lessons
 {
@@ -54,6 +55,9 @@ namespace Lessons
             Lesson6.Task2_UseClinic();
             Lesson6.Task3_UseTransportPark();
             Lesson6.Task4_UseAutoService();
+
+            Console.WriteLine("\nLesson8.\n");
+            Lesson8.Task1_UseRegistrationDataValidation();
         }
     }
 }
