@@ -1,6 +1,7 @@
 ﻿using Lessons.Lesson4Tasks;
 using Lessons.Lesson5Tasks;
 using Lessons.Lesson6Tasks;
+using Lessons.Lesson9Tasks;
 
 namespace Lessons
 {
@@ -54,6 +55,11 @@ namespace Lessons
             Lesson6.Task2_UseClinic();
             Lesson6.Task3_UseTransportPark();
             Lesson6.Task4_UseAutoService();
+
+            Console.WriteLine("\nLesson9.\n");
+            Lesson9.Task0_CatchArgumentOutOfRangeException();
+            Lesson9.Task0_PrintDictionary();
+            Lesson9.Task1_UseStore();
         }
     }
 }
