@@ -2,6 +2,8 @@
 using Lessons.Lesson5Tasks;
 using Lessons.Lesson6Tasks;
 using Lessons.Lesson8Tasks;
+using Lessons.Lesson9Tasks;
+
 
 namespace Lessons
 {
@@ -58,6 +60,11 @@ namespace Lessons
 
             Console.WriteLine("\nLesson8.\n");
             Lesson8.Task1_UseRegistrationDataValidation();
+
+            Console.WriteLine("\nLesson9.\n");
+            Lesson9.Task0_CatchArgumentOutOfRangeException();
+            Lesson9.Task0_PrintDictionary();
+            Lesson9.Task1_UseStore();
         }
     }
 }
