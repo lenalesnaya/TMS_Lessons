@@ -1,4 +1,5 @@
-﻿using Lessons.Lesson4Tasks;
+﻿using Lessons.Lesson10Tasks;
+using Lessons.Lesson4Tasks;
 using Lessons.Lesson5Tasks;
 using Lessons.Lesson6Tasks;
 using Lessons.Lesson8Tasks;
@@ -65,6 +66,11 @@ namespace Lessons
             Lesson9.Task0_CatchArgumentOutOfRangeException();
             Lesson9.Task0_PrintDictionary();
             Lesson9.Task1_UseStore();
+
+            Console.WriteLine("\nLesson10.\n");
+            Lesson10.Task1_UseArrayWrapper();
+            Lesson10.Task2_UseEngines();
+            Lesson10.Task3_UsePoints();
         }
     }
 }
