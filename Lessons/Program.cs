@@ -3,6 +3,7 @@ using Lessons.Lesson5Tasks;
 using Lessons.Lesson6Tasks;
 using Lessons.Lesson8Tasks;
 using Lessons.Lesson9Tasks;
+using Lessons.Additional;
 
 
 namespace Lessons
@@ -65,6 +66,11 @@ namespace Lessons
             Lesson9.Task0_CatchArgumentOutOfRangeException();
             Lesson9.Task0_PrintDictionary();
             Lesson9.Task1_UseStore();
+
+            Console.WriteLine("\nAdditional tasks.\n");
+            AdditionalTasks.Task1_FindSecondMaximumNumber();
+            AdditionalTasks.Task2_SeparateZerosAndOnes();
+            AdditionalTasks.Task3_FindSpecifiedSequenceBySum();
         }
     }
 }
