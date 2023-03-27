@@ -8,9 +8,9 @@
 
         public Triangle(Point<double> firstPoint, Point<double> secondPoint, Point<double> thirdPoint)
         {
-            FirstSide = Point<double>.GetLength(firstPoint, secondPoint);
-            SecondSide = Point<double>.GetLength(secondPoint, thirdPoint);
-            ThirdSide = Point<double>.GetLength(thirdPoint, firstPoint);
+            FirstSide = firstPoint.GetLength(secondPoint);
+            SecondSide = secondPoint.GetLength(thirdPoint);
+            ThirdSide = thirdPoint.GetLength(firstPoint);
         }
 
         public virtual double GetSquare()

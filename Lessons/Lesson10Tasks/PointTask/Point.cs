@@ -1,9 +1,9 @@
 ﻿namespace Lessons.Lesson10Tasks.PointTask
 {
-    internal class Point<T>
+    internal abstract class Point<T>
     {
-        private T x;
-        private T y;
+        protected T x;
+        protected T y;
 
         public T X
         {
@@ -27,6 +27,8 @@
         {
             Console.WriteLine($"X: {x:#.##}, Y: {y:#.##}");
         }
+
+        public abstract T GetLength(Point<T> secondPoint);
 
         public T GetLength(Point<T> point, Func<Point<T>, Point<T>, T> function)
         {
