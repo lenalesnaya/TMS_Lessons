@@ -1,5 +1,8 @@
 ﻿namespace Lessons.Lesson10Tasks.PointTask
 {
+    ///<summary>
+    ///Represents the entity "triangle".
+    ///</summary>
     internal class Triangle
     {
         public double FirstSide { get; }
@@ -13,6 +16,12 @@
             ThirdSide = thirdPoint.GetLength(firstPoint);
         }
 
+        ///<summary>
+        ///(virtual) Calculates the square of ​​the triangle by Heron formula.
+        ///</summary>
+        ///<returns>
+        ///Returns a double type value of square of the specific triangle.
+        ///</returns>
         public virtual double GetSquare()
         {
             Console.WriteLine("\nGet square by Heron formula:");

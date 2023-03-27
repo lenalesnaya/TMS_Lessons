@@ -2,6 +2,10 @@
 
 namespace Lessons.Lesson10Tasks.ArrayTask
 {
+    ///<summary>
+    ///Supports a simple iteration over a generic collection (implements generic IEnumerator<ElementType>).
+    ///A type parameter ElementType represents the type of the collection elements.
+    ///</summary>
     internal class GenericEnumerator<ElementType> : IEnumerator<ElementType>
     {
         private readonly ElementType[] array;
@@ -15,9 +19,12 @@ namespace Lessons.Lesson10Tasks.ArrayTask
         {
             this.array = array;
             position = -1;
-            currentElement = default(ElementType);
+            currentElement = default;
         }
 
+        ///<summary>
+        ///Moves the pointer to the next element in the collection.
+        ///</summary>
         public bool MoveNext()
         {
             if (++position >= array.Length)
@@ -31,6 +38,9 @@ namespace Lessons.Lesson10Tasks.ArrayTask
             return true;
         }
 
+        ///<summary>
+        ///Moves the pointer to the position before the first element of the collection.
+        ///</summary>
         public void Reset()
         {
             position = -1;

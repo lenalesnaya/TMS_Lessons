@@ -29,14 +29,9 @@ namespace Lessons.Lesson10Tasks
                 "rooster",
                 "chicken"
             };
+
             var newGenericArray = new GenericArrayWrapper<string>(stringArray);
             genericArray.Add(newGenericArray);
-
-            foreach (var item in genericArray)
-            {
-                Console.WriteLine(item);
-            }
-
             genericArray.Remove("dog");
             Console.WriteLine();
             Console.WriteLine(genericArray.GetValue(1));
@@ -70,9 +65,9 @@ namespace Lessons.Lesson10Tasks
         {
             Console.WriteLine("\nTask 3.\n");
 
-            var point1 = new Point<double>(5, 1);
-            var point2 = new Point<double>(22, 8);
-            var point3 = new Point<double>(2, 12);
+            var point1 = new DoublePoint(5, 1);
+            var point2 = new DoublePoint(22, 8);
+            var point3 = new DoublePoint(2, 12);
 
             point1.PrintCoordinates();
             point2.PrintCoordinates();
