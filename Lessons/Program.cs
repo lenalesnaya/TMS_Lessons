@@ -6,7 +6,6 @@ using Lessons.Lesson8Tasks;
 using Lessons.Lesson9Tasks;
 using Lessons.Additional;
 
-
 namespace Lessons
 {
     internal class Program
@@ -72,7 +71,7 @@ namespace Lessons
             Lesson10.Task1_UseArrayWrapper();
             Lesson10.Task2_UseEngines();
             Lesson10.Task3_UsePoints();
-            
+
             Console.WriteLine("\nAdditional tasks.\n");
             AdditionalTasks.Task1_FindSecondMaximumNumber();
             AdditionalTasks.Task2_MoveZerosLeft();
