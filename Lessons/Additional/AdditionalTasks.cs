@@ -5,76 +5,58 @@
         public static void Task1_FindSecondMaximumNumber()
         {
             int[] intArray = { 2, 1, 5, 3, 4, 5 };
-
-            var maxValue = GetMaxValue(intArray);
-            var secondMaxValue = GetSecondMaxValue(intArray, maxValue);
-
-            Console.WriteLine($"Second max value is {secondMaxValue}");
+            Console.WriteLine($"Second max value is {GetSecondMaxValue(intArray)}");
         }
 
-        private static int GetMaxValue(int[] array)
+        private static int GetSecondMaxValue(int[] array)
         {
             var maxValue = array[0];
+            var secondMaxValue = array[0];
             for (int i = 1; i < array.Length; i++)
             {
                 if (array[i] > maxValue)
                 {
                     maxValue = array[i];
                 }
-            }
-
-            return maxValue;
-        }
-
-        private static int GetSecondMaxValue(int[] array, int maxValue)
-        {
-            var secondMaxValue = array[0];
-            for (int i = 1; i < array.Length; i++)
-            {
-                if (array[i] > secondMaxValue)
+                if (array[i] < maxValue && array[i] > secondMaxValue)
                 {
-                    if (array[i] != maxValue)
-                    {
-                        secondMaxValue = array[i];
-                    }
+                    secondMaxValue = array[i];
                 }
             }
 
             return secondMaxValue;
         }
 
-        public static void Task2_SeparateZerosAndOnes()
+        public static void Task2_MoveZerosLeft()
         {
             var array = new []{ 0, 1, 0, 1 };
-            var zerosCount = MoveZerosLeft(array);
-            MoveOnesRight(array, zerosCount);
+            MoveZerosLeft(array);
             PrintArray(array);
 
             array = new[] { 1, 1, 0, 1, 1, 1, 0 };
-            zerosCount = MoveZerosLeft(array);
-            MoveOnesRight(array, zerosCount);
+            MoveZerosLeft(array);
+            PrintArray(array);
+
+            array = new[] { 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0 };
+            MoveZerosLeft(array);
             PrintArray(array);
         }
 
-        private static int MoveZerosLeft(int[] array)
+        private static void MoveZerosLeft(int[] array)
         {
             var zerosCounter = 0;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] == 0)
                 {
-                    array[zerosCounter++] = array[i];
+                    if (array[zerosCounter] == 1)
+                    {
+                        array[zerosCounter] = array[i];
+                        array[i] = 1;
+                    }
+
+                    zerosCounter++;
                 }
-            }
-
-            return zerosCounter;
-        }
-
-        private static void MoveOnesRight(int[] array, int zerosCounter)
-        {
-            for (int i = zerosCounter; i < array.Length; i++)
-            {
-                array[i] = 1;
             }
         }
 
@@ -93,40 +75,25 @@
             var array = new int[] { 2, 3, 9, 4, 7, 16, 1, 18, 10, 4 };
             var number = 20;
 
-            int total = 0;
-            int partialSum = 0;
-            int arrayLength = array.Length;
+            bool coincidence = false;
+            var partialSum = 0;
 
-            var dict = new Dictionary<int, int>
-            {
-                { 0, 1 }
-            };
-
-            for (int i = 0; i < arrayLength; i++)
+            var list = new List<int>() { 0 };
+            for (int i = 0; i < array.Length; i++)
             {
                 partialSum += array[i];
-
-                if (dict.ContainsKey(partialSum - number))
+                if (list.Contains(partialSum - number))
                 {
-                    total += dict[partialSum - number];
-                }
-
-                if (total > 1)
-                {
+                    coincidence = true;
                     break;
                 }
 
-                if (!dict.ContainsKey(partialSum))
-                {
-                    dict[partialSum] = 0;
-                }
-                dict[partialSum] += 1;
+                list.Add(partialSum);
             }
 
-            var result = total > 0 ?
+            Console.WriteLine(coincidence == true ?
                 "\nSequence is found" :
-                "\nSequence isn`t found";
-            Console.WriteLine(result);
+                "\nSequence isn`t found");
         }
     }
 }
