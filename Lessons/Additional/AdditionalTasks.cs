@@ -1,4 +1,6 @@
-﻿namespace Lessons.Additional
+﻿using System.Linq;
+
+namespace Lessons.Additional
 {
     internal class AdditionalTasks
     {
@@ -78,17 +80,17 @@
             bool coincidence = false;
             var partialSum = 0;
 
-            var list = new List<int>() { 0 };
+            var sums = new HashSet<int>(array.Length) { 0 };
             for (int i = 0; i < array.Length; i++)
             {
                 partialSum += array[i];
-                if (list.Contains(partialSum - number))
+                if (sums.Contains(partialSum - number))
                 {
                     coincidence = true;
                     break;
                 }
 
-                list.Add(partialSum);
+                sums.Add(partialSum);
             }
 
             Console.WriteLine(coincidence == true ?
