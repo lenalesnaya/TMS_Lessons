@@ -24,7 +24,7 @@ namespace Lessons.Lesson11Tasks
         public void CalculateAveragePrice(List<decimal> prices)
         {
             AveragePrice = prices.Average(x => x);
-            priceMonitorArgsEventManager.Notify(EventType.AverageHousingChanged, this);
+            priceMonitorArgsEventManager.Notify(EventType.AverageHousingPriceChanged, this);
 
             if (AveragePrice < 1000000000)
             {

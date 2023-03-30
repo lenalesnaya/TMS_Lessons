@@ -15,8 +15,8 @@ namespace Lessons.Lesson11Tasks
 
             monitor.stringArgsEventManager.Subscribe(ad, EventType.AverageHousingPriceFell);
             monitor.stringArgsEventManager.Subscribe(taxService, EventType.AverageHousingPriceIncreased);
-            monitor.priceMonitorArgsEventManager.Subscribe(taxService, EventType.AverageHousingChanged);
-            monitor.priceMonitorArgsEventManager.Subscribe(president, EventType.AverageHousingChanged);
+            monitor.priceMonitorArgsEventManager.Subscribe(taxService, EventType.AverageHousingPriceChanged);
+            monitor.priceMonitorArgsEventManager.Subscribe(president, EventType.AverageHousingPriceChanged);
 
             var housingPrices = new HousingPrices(monitor.CalculateAveragePrice);
             monitor.ShowAveragePrice();

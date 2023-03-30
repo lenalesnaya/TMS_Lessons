@@ -2,7 +2,7 @@
 {
     internal enum EventType
     {
-        AverageHousingChanged,
+        AverageHousingPriceChanged,
         AverageHousingPriceFell,
         AverageHousingPriceIncreased
     }
