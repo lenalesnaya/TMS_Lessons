@@ -53,7 +53,7 @@
         ///</returns>
         public T GetLength(Point<T> secondPoint, Func<Point<T>, Point<T>, T> function)
         {
-            return function.Invoke(this, secondPoint);
+            return function(this, secondPoint);
         }
 
         ///<summary>
