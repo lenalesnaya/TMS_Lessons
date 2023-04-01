@@ -5,6 +5,7 @@ using Lessons.Lesson6Tasks;
 using Lessons.Lesson8Tasks;
 using Lessons.Lesson9Tasks;
 using Lessons.Additional;
+using Lessons.Lesson12Tasks;
 
 namespace Lessons
 {
@@ -71,6 +72,8 @@ namespace Lessons
             Lesson10.Task1_UseArrayWrapper();
             Lesson10.Task2_UseEngines();
             Lesson10.Task3_UsePoints();
+
+            Lesson12.Task1_UseLinq();
 
             Console.WriteLine("\nAdditional tasks.\n");
             AdditionalTasks.Task1_FindSecondMaximumNumber();
