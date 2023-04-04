@@ -24,9 +24,9 @@
 
             var list = GetListFromDictionary(dictionary);
             Console.WriteLine();
-            foreach (var kvp in list)
+            foreach (var element in list)
             {
-                Console.WriteLine($"{kvp.Key} - {kvp.Value}");
+                Console.WriteLine($"{element.Key} - {element.Value}");
             }
 
             var userList = new List<User>
@@ -82,23 +82,7 @@
             words?.Distinct().Count();
 
         private static int[] GetContaining3ElementsSince5th(int[] numbers) =>
-            numbers.Skip(4).Where(IsContain3).ToArray();
-
-        private static bool IsContain3(int number)
-        {
-            var uNumber = Math.Abs(number);
-            while (uNumber > 0)
-            {
-                var digit = uNumber % 10;
-                if (digit == 3)
-                {
-                    return true;
-                }
-                uNumber /= 10;
-            }
-
-            return false;
-        }
+            numbers.Skip(4).Where(n => n.ToString().Contains('3')).ToArray();
 
         private static List<KeyValuePair<string, string>> GetListFromDictionary(Dictionary<string, string> dictionary) =>
             (from kvp in dictionary
