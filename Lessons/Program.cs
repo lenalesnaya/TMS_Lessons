@@ -6,6 +6,7 @@ using Lessons.Lesson8Tasks;
 using Lessons.Lesson9Tasks;
 using Lessons.Additional;
 using Lessons.Lesson11Tasks;
+using Lessons.Lesson12Tasks;
 
 namespace Lessons
 {
@@ -75,6 +76,9 @@ namespace Lessons
 
             Console.WriteLine("\nLesson11.\n");
             Lesson11.Task1_UseHousingPrices();
+          
+            Console.WriteLine("\nLesson12.\n");
+            Lesson12.Task1_UseLinq();
 
             Console.WriteLine("\nAdditional tasks.\n");
             AdditionalTasks.Task1_FindSecondMaximumNumber();
