@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace Lessons.Additional
+﻿namespace Lessons.Additional
 {
     internal class AdditionalTasks
     {
